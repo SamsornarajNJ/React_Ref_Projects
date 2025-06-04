@@ -1,0 +1,15 @@
+# node dependencies
+**/node_modules/
+**/build/
+**/dist/
+
+# environment files
+**/.env*
+
+# misc
+.DS_Store
+.vscode/
+*.log
+
+# TypeScript
+*.tsbuildinfo
