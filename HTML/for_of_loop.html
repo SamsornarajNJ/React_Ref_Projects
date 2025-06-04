@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of loop</title>
+</head>
+<body>
+    <!--for of loop is used to loop the iterable values like arrays, strings, Sets, Maps, etc-->
+    <!-- Syntax //for(const item of iterable(arr, strings,etc)) can use let when need to reassign the value--> 
+    <script>
+    const arr = ["John","David","Due"];
+    for(const item of arr) {
+        console.log(`${item}`);
+    }
+
+    //Looping through string
+    const str = "SAMNJ";
+    for(const string of str) {
+        console.log(`${string}`);
+    }
+
+    //Looping through Set
+    const ids = new Set([1,2,3,4,5,1,2]);
+    console.log(ids);
+    
+    //
+    const userRoles = new Map([
+        ['Alice', 'Admin'],
+        ['Bob', 'Editor']
+    ]);
+    for(const [user, role] of userRoles) {
+        console.log(`${user} is a ${role}`);
+    }
+    </script>
+</body>
+</html>

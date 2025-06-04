@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select id="countrySelector">
+  <option value="">Select Country</option>
+  <option value="USA">USA</option>
+  <option value="INDIA">INDIA</option>
+</select>
+
+<p id="statesOutput"></p>
+
+<script>
+  const countries = {
+    USA: ["New York", "California"],
+    INDIA: ["Tamil Nadu", "Chennai"]
+  };
+
+  const countrySelector = document.getElementById("countrySelector");
+  const statesOutput = document.getElementById("statesOutput");
+  
+    countrySelector.addEventListener( 'change',function () {
+    const state = this.value
+    console.log(`${countries[state]}`);
+    statesOutput.innerText = countries[state];
+})
+</script>
+
+</body>
+</html>

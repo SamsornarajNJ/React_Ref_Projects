@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+      //Array destructuring
+      const array1 = [1,2,3,4,5];
+      const [a,b,c, ...rest] = array1; // const [a,b,c] = array //synatx
+      console.log(a,b,c, "and", rest); // 1 2 3 and [ 4, 5 ]
+      console.log(a,b,c); //1 2 3 // rest will gethered as group
+
+      //object destructuring
+      const obj = {name: "SAMNJ", email: "njsam3010@gmail.com"};
+      const {name, email} = obj; //synatx // const [a,b,c] = array
+      console.log(name, email);
+
+      //Nested destructuring 
+      const object = { personname: "Bobby", address: { city: "New York", zip: "10001" } };
+      const {personname, address:{city, zip} } = object;
+      console.log(personname, city);
+
+      //Destructuring with default values
+      const arr = [1];
+      const [x=10, y=20] = arr;
+      console.log(x,y); // 1 20
+      console.log(x,y); //when const arr = [1,2,3]; //output will be 1,2,3
+
+      //Renaming the variable with destructuring 
+      const obj2 = { name: "Charlie", age: 30 };
+      const {name: Firstname, age:How_old_r_u} = obj2
+      console.log(Firstname, How_old_r_u);
+
+      //function parameters destructuring
+      function greet({name, age}) {
+         console.log(name, age);
+      }
+      const user = {name: "Joe", empId: "01232"}
+      greet(user);
+
+    </script>
+</body>
+</html>

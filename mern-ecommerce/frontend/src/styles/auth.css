@@ -1,0 +1,43 @@
+
+.loginScreen {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-image: url('../assert/images/Silk_bg.jpeg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.loginForm {
+  height: 400px;
+  width: 365px;
+  text-align: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid #bdbdbd;
+}
+h1 {
+    margin-bottom: 30px;
+}
+input {
+  height: 30px;
+  max-width: 100%;
+  width: -webkit-fill-available;
+  
+}
+.loginForm input {
+  margin-bottom: 10px;
+  padding: 5px 8px;
+}
+button {
+  width: 200px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  margin-top: 30px;
+}

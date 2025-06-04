@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <script>
+        function outer() {
+            let str ="Hello world"
+            function inner() {
+                console.log(str);
+            }
+            return inner;
+        }
+        const betterfn = outer(); // whenever we use betterfn that time inner() also accessable via this.
+        betterfn();
+
+        //Closure with Parms
+        function multiply(mulNumber) {
+            function innerfn(num) {
+                return num * mulNumber;
+            }
+            return innerfn;
+        } 
+        const clsrWithParms = multiply(5);
+        console.log(clsrWithParms(2));
+
+        //if
+        //const clsrWithParms = multiply();
+        //console.log(clsrWithParms(2)); //output 2
+
+
+        //Closure with asynchronous code
+        function createTimer () {
+            let count = 0;
+            let timer = setInterval(() => {
+                count++;
+                console.log(count);
+                if(count == 10) {
+                clearInterval(timer);
+            }
+            }, 1000);
+        }
+       // createTimer();
+
+        //Constructor function
+        function Counter() {
+            let count = 0;
+           this.increment = function () {
+             count++;
+             console.log(count);
+           }
+           this.decrement = function () {
+            count--;
+            console.log(count);
+           }
+        }
+
+        const counter = new Counter;
+        counter.increment();
+        counter.decrement();
+        
+        //function factors closure
+        function createGreeting(message) {
+          function user(name) {
+            console.log(`Hi ${name} ${message}`);
+          }
+          return user;
+        }
+        const sayhello = createGreeting("Welcome to the world");
+        sayhello("SamNJ");
+
+        //Memory leakage
+        function createClosure() {
+            let bigData = new Array(1000).fill(0);
+            function innerfunction() {
+                console.log(bigData[0]);
+            }
+        }
+        const closure = createClosure();
+    </script>
+</body>
+</html>

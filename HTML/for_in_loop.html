@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-in-loop</title>
+</head>
+<body>
+    <!---The for...in loop is specifically used to iterate over the keys (properties) of an object or the indexes of an array. Here's how it works:-->
+    <script>
+        const person = {
+            name: "Alice",
+            age: 26,
+            city: "Newyork"
+        }
+         //First of all there are two ways to access objects
+         console.log(person.name);
+         console.log(person["name"]);
+
+        for(let key in person) {  //syntax for(ley key in object)
+            //console.log(`${key}: ${person[key]}`);  
+            if(person[key] === "Alice") {
+                console.log("Found");
+            }          
+        }
+
+        // Using for...in with Functions or Methods
+        ///You can also iterate over the properties of functions (if the function has properties) or other objects.
+        function greet() {
+            console.log(this.language); //undefined
+            console.log(greet.language); //English
+        }
+        greet.language = "English";
+        greet.year = "2025"
+        //greet()
+        //coming to the topic
+        for(let key in greet) {
+            console.log(`${key}, ${greet[key]}`); // language, English  year, 2025
+        }
+
+        //Filtering inherited properties
+        const person1 = {name: "Hence", Age: 27};
+        const employee = Object.create(person1);
+        employee.job = "Developer"; // directly adding job property with value to employee
+        for(let key in employee) {
+           if(employee.hasOwnProperty(key)) {
+            console.log(`${key} and`, employee["job"]);
+           }
+        }
+    </script>
+</body>
+</html>
